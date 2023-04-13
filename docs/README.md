@@ -7,6 +7,23 @@ The way it works is quite simple. GCP offers a service called "budgets", which c
 **Disclamer: Disabling billing on a project may result in data loss. The account can be manually reactivated but Google does not guarantee that all services remain in place.**
 <cite> -- cf. [Google Cloud, Disable billing for a project](https://cloud.google.com/billing/docs/how-to/modify-project?hl=en#disable_billing_for_a_project) </cite>
 
+## Usage
+Simply reference the GitHub release as a Terraform module and provide the required input parameters. 
+```hcl
+module "kill-switch" {
+  source = "github.com/TrisNol/gcp-billing-kill-switch?ref=v1.0.0"
+
+  project_id      = var.project_id
+  region          = var.region
+  billing_account = var.billing_account
+  storage_bucket  = google_storage_bucket.bucket.name
+}
+```
+
+Note that the storage bucket should already exist and that the account deploying the resources has to have the following additioal roles besides the ones required to actually deploy a cloud function:
+- roles/billing.admin (to be granted on billing account not level, not project)
+- roles/security.admin (project level)
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
