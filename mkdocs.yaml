@@ -1,0 +1,25 @@
+site_name: GCP Billing Kill Switch
+site_author: Tristan Nolde
+repo_url: https://github.com/TrisNol/gcp-billing-kill-switch
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+nav:
+  - Home: "README.md"
+  - Changelog: "CHANGELOG.md"
+  - License: "LICENSE.md"
+
+plugins:
+  - search
+  - mkdocstrings

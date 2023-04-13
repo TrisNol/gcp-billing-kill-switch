@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/gruntwork-io/pre-commit
+    rev: "v0.1.19"
+    hooks:
+      - id: tflint
+        args:
+          - "--module"
+      - id: terraform-validate
+      - id: terraform-fmt
+  - repo: https://github.com/terraform-docs/terraform-docs
+    rev: "v0.16.0"
+    hooks:
+      - id: terraform-docs-go
+        args: ["--output-file", "./docs/TERRAFORM.md"]
