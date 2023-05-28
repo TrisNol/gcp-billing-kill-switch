@@ -21,7 +21,8 @@ module "kill-switch" {
 ```
 
 Note that the storage bucket should already exist and that the account deploying the resources has to have the following additioal roles besides the ones required to actually deploy a cloud function:
-- roles/billing.admin (to be granted on billing account not level, not project)
+
+- roles/billing.admin (to be granted on **billing account** level, **not project**)
 - roles/security.admin (project level)
 
 <!-- BEGIN_TF_DOCS -->
