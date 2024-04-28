@@ -70,7 +70,7 @@ resource "google_cloudfunctions2_function" "function" {
   description = "Cloud function deactivating billling account"
 
   build_config {
-    runtime     = "python39"
+    runtime     = "python312"
     entry_point = "stop_billing"
     source {
       storage_source {
