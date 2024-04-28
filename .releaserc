@@ -22,5 +22,6 @@
       }
     ],
     "@semantic-release/github"
-  ]
+  ],
+  "force": true
 }
