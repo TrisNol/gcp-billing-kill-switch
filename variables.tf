@@ -34,7 +34,7 @@ variable "currency" {
   description = "Currency to be used for the budget"
   default     = "EUR"
   validation {
-    condition     = contains(["USD", "EUR"], var.currency)
-    error_message = "Must be either USD or EUR"
+    condition     = can(regex("^[A-Z]{3}$", var.currency))
+    error_message = "Must be a valid three-letter ISO-4217 currency code (e.g., USD, EUR)."
   }
 }
